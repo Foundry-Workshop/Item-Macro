@@ -5,6 +5,7 @@ import * as sfrpg from "./systems/sfrpg.js";
 import * as swade from "./systems/swade.js";
 import * as dungeonworld from "./systems/dungeonworld.js";
 import * as ose from "./systems/ose.js";
+import * as wwn from "./systems/wwn.js";
 import * as demonlord from "./systems/demonlord.js";
 import * as cyberpunk from "./systems/cyberpunk-red-core.js";
 import * as worldbuilding from "./systems/worldbuilding.js";
@@ -123,6 +124,9 @@ export class helper{
       case "ose" :
         if(settings.value("defaultmacro")) ose.register_helper();
         break;
+      case "wwn" :
+        if(settings.value("defaultmacro")) wwn.register_helper();
+        break;
       case "demonlord" :
         if(settings.value("defaultmacro")) demonlord.register_helper();
         break;
@@ -211,6 +215,9 @@ export class helper{
         break;
       case "ose" :
         if(settings.value("charsheet")) return ose.sheetHooks();
+        break;
+      case "wwn" :
+        if(settings.value("charsheet")) return wwn.sheetHooks();
         break;
       case "demonlord" :
         if(settings.value("charsheet")) return demonlord.sheetHooks();
