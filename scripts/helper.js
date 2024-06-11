@@ -109,7 +109,6 @@ export class helper{
     switch(game.system.id) {
       case "dnd5e" :
         if (settings.value("defaultmacro")) dnd5e.register_helper();
-        dnd5e.applyTidy5eCompatibility();
         break;
       case "sfrpg" :
         if(settings.value("defaultmacro")) sfrpg.register_helper();

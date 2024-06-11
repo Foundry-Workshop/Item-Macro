@@ -46,37 +46,3 @@ export function sheetHooks() {
 
   return {render: renderSheets, rendered: renderedSheets};
 }
-
-/**
- * Provides module compatibility with the new Tidy 5e Sheets: https://github.com/kgar/foundry-vtt-tidy-5e-sheets/
- */
-export function applyTidy5eCompatibility() {
-  /**
-   * When the user clicks the use item button, allow Item Macro to override, based on settings.
-   */
-  Hooks.on("tidy5e-sheet.actorPreUseItem", (item, config, options) => {
-    const shouldExecuteMacro =
-      settings.value("charsheet") &&
-      !settings.value("click") &&
-      item.hasMacro();
-    if (shouldExecuteMacro) {
-      item.executeMacro({config, options});
-      return false;
-    }
-  });
-
-  /**
-   * When the user right-clicks the use item button, allow Item Macro to hook in and add behaviors, based on settings.
-   */
-  Hooks.on("tidy5e-sheet.actorItemUseContextMenu", (item, options) => {
-    const shouldExecuteMacro =
-      settings.value("charsheet") &&
-      settings.value("click") &&
-      item.hasMacro();
-    if (shouldExecuteMacro) {
-      item.executeMacro({options});
-      options.event.preventDefault();
-      options.event.stopPropagation();
-    }
-  });
-}
