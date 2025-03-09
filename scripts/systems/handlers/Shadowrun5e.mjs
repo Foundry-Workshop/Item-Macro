@@ -1,5 +1,3 @@
-import {BaseSystem} from "../BaseSystem.mjs";
-import {settings} from "../../settings.mjs";
 import { BaseSystem } from "../BaseSystem.mjs";
 import { settings } from "../../settings.mjs";
 
