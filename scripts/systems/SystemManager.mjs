@@ -15,6 +15,7 @@ import {DungeonCrawlClassics} from "./handlers/DungeonCrawlClassics.mjs";
 import {Dragonbane} from "./handlers/Dragonbane.mjs";
 import {WorldOfDarkness} from "./handlers/WorldOfDarkness.mjs";
 import {Symbaroum} from "./handlers/Symbaroum.mjs";
+import {Tormenta20} from "./handlers/Tormenta20.mjs"
 
 export class SystemManager {
   /**
@@ -38,6 +39,7 @@ export class SystemManager {
     Starfinder,
     SWADE,
     Symbaroum,
+    Tormenta20,
     WFRP4e,
     Worldbuilding,
     WorldOfDarkness,
